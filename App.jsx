@@ -6,11 +6,10 @@ function App() {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    watch();
+  const onHandleSubmit = () => {
+    console.log(watch());
   };
   return (
     <div>
@@ -84,7 +83,9 @@ function App() {
           )}
         </div>
         <div>
-          <button type="submit">submit</button>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "...loading" : "submit"}
+          </button>
         </div>
       </form>
     </div>
