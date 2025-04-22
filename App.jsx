@@ -11,21 +11,41 @@ function App() {
       <form action="" onSubmit={handleSubmit(onHandleSubmit)}>
         <div>
           <label htmlFor="firstName">firstName</label>
-          <input type="text" {...register("firstName", {})} id="firstName" />
+          <input
+            type="text"
+            {...register("firstName", {
+              required: "firstName is required",
+            })}
+            id="firstName"
+          />
         </div>
         <div>
           <label htmlFor="lastName">lastName</label>
-          <input type="text" {...register("lastName")} id="lastName" />
+          <input
+            type="text"
+            {...register("lastName", {
+              required: "lastName is required",
+            })}
+            id="lastName"
+          />
         </div>
         <div>
           <label htmlFor="password">password</label>
-          <input type="text" {...register("password")} id="password" />
+          <input
+            type="password"
+            {...register("password", {
+              required: "password is required",
+            })}
+            id="password"
+          />
         </div>
         <div>
           <label htmlFor="confrimPassword">confrimPassword</label>
           <input
-            type="text"
-            {...register("confrimPassword")}
+            type="password"
+            {...register("confrimPassword", {
+              required: "confrimPassword is required",
+            })}
             id="confrimPassword"
           />
         </div>
