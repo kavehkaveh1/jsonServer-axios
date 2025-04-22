@@ -1,18 +1,3 @@
 {
-  "info": [
-    {
-      "id": "ab77",
-      "firstName": "kaveh",
-      "lastName": "nassiri",
-      "password": "123123123",
-      "confrimPassword": "123123123"
-    },
-    {
-      "id": "8b37",
-      "firstName": "sjbbjb",
-      "lastName": "hbhbh",
-      "password": "123123123",
-      "confrimPassword": "123123123"
-    }
-  ]
+  "info": []
 }
