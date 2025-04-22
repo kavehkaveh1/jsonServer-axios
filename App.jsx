@@ -2,9 +2,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 function App() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   const onHandleSubmit = (data) => {
     console.log(data);
+    watch();
   };
   return (
     <div>
@@ -23,6 +29,7 @@ function App() {
             })}
             id="firstName"
           />
+          {errors.firstName && <div>{errors.firstName.message}</div>}
         </div>
         <div>
           <label htmlFor="lastName">lastName</label>
@@ -38,6 +45,7 @@ function App() {
             })}
             id="lastName"
           />
+          {errors.lastName && <div>{errors.lastName.message}</div>}
         </div>
         <div>
           <label htmlFor="password">password</label>
@@ -52,6 +60,7 @@ function App() {
             })}
             id="password"
           />
+          {errors.password && <div>{errors.password.message}</div>}
         </div>
         <div>
           <label htmlFor="confrimPassword">confrimPassword</label>
@@ -64,6 +73,9 @@ function App() {
             })}
             id="confrimPassword"
           />
+          {errors.confrimPassword && (
+            <div>{errors.confrimPassword.message}</div>
+          )}
         </div>
         <div>
           <button type="submit">submit</button>
