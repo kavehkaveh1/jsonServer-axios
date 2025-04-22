@@ -2,10 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 function App() {
-  const { register } = useForm();
+  const { register, handleSubmit } = useForm();
+  const onHandleSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div>
-      <form action="">
+      <form action="" onSubmit={handleSubmit(onHandleSubmit)}>
         <div>
           <label htmlFor="firstName">firstName</label>
           <input type="text" {...register("firstName", {})} id="firstName" />
