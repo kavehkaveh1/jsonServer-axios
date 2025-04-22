@@ -15,6 +15,11 @@ function App() {
             type="text"
             {...register("firstName", {
               required: "firstName is required",
+              pattern: {
+                value: /^[A-Za-z0-9]{3,16}$/,
+                message:
+                  "firstname should be 3-16 characters and shouldn't include any special characters!",
+              },
             })}
             id="firstName"
           />
@@ -25,6 +30,11 @@ function App() {
             type="text"
             {...register("lastName", {
               required: "lastName is required",
+              pattern: {
+                value: /^[A-Za-z0-9]{3,16}$/,
+                message:
+                  "lastname should be 3-16 characters and shouldn't include any special characters!",
+              },
             })}
             id="lastName"
           />
@@ -35,6 +45,10 @@ function App() {
             type="password"
             {...register("password", {
               required: "password is required",
+              minLength: {
+                value: 8,
+                message: "password must have at leaste 8 charachters",
+              },
             })}
             id="password"
           />
@@ -45,6 +59,8 @@ function App() {
             type="password"
             {...register("confrimPassword", {
               required: "confrimPassword is required",
+              validate: (value) =>
+                value === password || "Passwords do not match",
             })}
             id="confrimPassword"
           />
