@@ -21,6 +21,7 @@ function App() {
     console.log(watch());
     reset();
   };
+
   return (
     <div>
       <form action="" onSubmit={handleSubmit(onHandleSubmit)}>
