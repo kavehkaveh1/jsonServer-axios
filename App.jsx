@@ -78,18 +78,18 @@ function App() {
           )}
         </div>
         <div>
-          <label htmlFor="confrimPassword">confrimPassword</label>
+          <label htmlFor="confirmPassword">confirmPassword</label>
           <input
             type="password"
-            {...register("confrimPassword", {
-              required: "confrimPassword is required",
+            {...register("confirmPassword", {
+              required: "confirmPassword is required",
               validate: (value) =>
                 value === watch("password") || "Passwords do not match",
             })}
-            id="confrimPassword"
+            id="confirmPassword"
           />
-          {errors.confrimPassword && (
-            <div className="error">{errors.confrimPassword.message}</div>
+          {errors.confirmPassword && (
+            <div className="error">{errors.confirmPassword.message}</div>
           )}
         </div>
         <div>
