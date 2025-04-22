@@ -6,10 +6,12 @@ function App() {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm();
   const onHandleSubmit = () => {
     console.log(watch());
+    reset();
   };
   return (
     <div>
