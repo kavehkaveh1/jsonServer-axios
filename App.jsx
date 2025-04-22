@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import api from "./post";
 import "./style.css";
 function App() {
   const {
@@ -9,7 +10,14 @@ function App() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm();
-  const onHandleSubmit = () => {
+  const onHandleSubmit = async (data) => {
+    try {
+      const response = await api.post("", data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+      console.log(error.data);
+    }
     console.log(watch());
     reset();
   };
