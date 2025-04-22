@@ -29,7 +29,9 @@ function App() {
             })}
             id="firstName"
           />
-          {errors.firstName && <div>{errors.firstName.message}</div>}
+          {errors.firstName && (
+            <div className="error">{errors.firstName.message}</div>
+          )}
         </div>
         <div>
           <label htmlFor="lastName">lastName</label>
@@ -45,7 +47,9 @@ function App() {
             })}
             id="lastName"
           />
-          {errors.lastName && <div>{errors.lastName.message}</div>}
+          {errors.lastName && (
+            <div className="error">{errors.lastName.message}</div>
+          )}
         </div>
         <div>
           <label htmlFor="password">password</label>
@@ -60,7 +64,9 @@ function App() {
             })}
             id="password"
           />
-          {errors.password && <div>{errors.password.message}</div>}
+          {errors.password && (
+            <div className="error">{errors.password.message}</div>
+          )}
         </div>
         <div>
           <label htmlFor="confrimPassword">confrimPassword</label>
@@ -69,12 +75,12 @@ function App() {
             {...register("confrimPassword", {
               required: "confrimPassword is required",
               validate: (value) =>
-                value === password || "Passwords do not match",
+                value === watch("password") || "Passwords do not match",
             })}
             id="confrimPassword"
           />
           {errors.confrimPassword && (
-            <div>{errors.confrimPassword.message}</div>
+            <div className="error">{errors.confrimPassword.message}</div>
           )}
         </div>
         <div>
